@@ -1,5 +1,5 @@
 """
-Contiene funciones para inicializar y actualizar los acumulados por equipo.
+Las funciones de este módulo permiten inicializar y actualizar los acumulados por equipo.
 """
 
 #Crea un diccionario base con los campos:
