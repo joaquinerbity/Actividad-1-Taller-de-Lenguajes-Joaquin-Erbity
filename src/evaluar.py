@@ -1,6 +1,6 @@
 """
 Las funciones de este módulo permiten evaluar y determinar quién fue el mejor equipo
-de cada ronda
+de cada ronda.
 """
 
 def calcular_puntaje(datos_equipo: dict):
@@ -22,6 +22,7 @@ def mejor_equipo_ronda(ronda: dict):
             mejor_puntaje = puntaje
             mejor_nombre = nombre
     return (mejor_nombre, mejor_puntaje)
+
     
 #Entrada: diccionario de todos los equipos en una ronda
 #Salida: una tupla [str, int] que seria: [nombre_equipo,puntaje]
