@@ -36,10 +36,19 @@ Actividad-1-Taller-de-Lenguajes-Joaquin-Erbity/
 #### INTALACIÓN DE DEPENDENCIAS Y EJECUCIÓN DEL PROGRAMA
 
 1. **Clonar el repositorio**
-2. **Instalar dependencias**
-   Instalar Jupyter Notebook (necesario para ejecutar el archivo .ipynb) usando el archivo requirements.txt:
-    pip install -r requirements.txt
-3. **Ejecutar el programa (notebook)**
-   Iniciar Jupyter Notebook desde la terminal:
-    jupyter notebook
+
+2. **Instalar dependencias**  
+   Instala Jupyter Notebook (necesario para ejecutar el archivo `.ipynb`) usando el archivo `requirements.txt`:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Ejecutar el programa (notebook)**  
+   Iniciar Jupyter Notebook desde la terminal
+
+   ```bash
+   jupyter notebook
+   ```
+
    Abrir el archivo ubicado en: src/notebooks/programa.ipynb
