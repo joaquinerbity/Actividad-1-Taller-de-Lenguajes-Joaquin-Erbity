@@ -30,7 +30,7 @@ def actualizar_acumulados(acum: dict, ronda: dict, mejor: str) -> dict:
         if (equipo == mejor):
             acum[equipo]["mejores"] += 1
 
-        acum[equipo]["total"] += (ronda[equipo]["innovacion"]*3 + ronda[equipo]["presentacion"]*1)
+        acum[equipo]["total"] += ronda[equipo]["puntaje"]
 
         if ronda[equipo]["errores"]:
             acum[equipo]["errores"] += 1

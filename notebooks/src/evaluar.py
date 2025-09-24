@@ -10,18 +10,16 @@ def calcular_puntaje(datos_equipo: dict):
 #Entrada: diccionario acum con innovacion,presentacion,errores
 #Salida: puntaje (int)
 
-def mejor_equipo_ronda(ronda: dict):
-    mejor_nombre = 'a'
-    mejor_puntaje = 0
-#inicializamos variables en 0 para despues compararlas
+def resultados_equipo(equipo:dict) ->dict:
+    equipo['puntaje'] = calcular_puntaje(equipo)        #agrego el puntaje
+    return equipo
 
-    for nombre in ronda:      #recorremos cada equipo en la ronda
-        datos = ronda[nombre] # guardamos en datos el diccionario del equipo actual para usar en calcular_puntaje
-        puntaje = calcular_puntaje(datos)
-        if puntaje > mejor_puntaje:
-            mejor_puntaje = puntaje
-            mejor_nombre = nombre
-    return (mejor_nombre, mejor_puntaje)
+
+def mejor_equipo_ronda(nombre: str, equipo: dict, mejor_puntaje: int, mejor_nombre: str) -> tuple:
+    if equipo["puntaje"] > mejor_puntaje:
+        mejor_puntaje = equipo["puntaje"]
+        mejor_nombre = nombre
+    return mejor_nombre, mejor_puntaje
 
     
 #Entrada: diccionario de todos los equipos en una ronda
