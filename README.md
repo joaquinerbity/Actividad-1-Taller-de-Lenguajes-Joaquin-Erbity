@@ -22,13 +22,13 @@ Este repositorio responde a la necesidad de trabajar con un Sistema de Evaluaci�
 
 ```bash
 Actividad-1-Taller-de-Lenguajes-Joaquin-Erbity/
-├── src/
-│   ├── __init__.py
-│   ├── acumular.py
-│   ├── evaluar.py
-│   ├── tabla.py
-│   └── notebooks/
-│       └── programa.ipynb
+├── notebooks/
+│   ├── programa.ipynb
+│   └── src/
+│       └── __init__.py
+|       └── acumular.py
+|       └── evaluar.py
+|       └── tabla.py
 └── README.md
 └── requirements.txt
 ```
