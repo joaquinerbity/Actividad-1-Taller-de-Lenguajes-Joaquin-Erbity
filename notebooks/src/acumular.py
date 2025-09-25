@@ -23,15 +23,18 @@ def inicializar_acumulados(evaluaciones):
 #Incrementa el contador de mejores equipos si corresponde
 #O sea, en una sola pasada tiene que tocar todos los campos del acumulado.
 
-def actualizar_acumulados(acum: dict, ronda: dict, mejor: str) -> dict: 
-    for nom_equipo, datos_equipo in ronda.items():
-        acum[nom_equipo]["innovacion"] += datos_equipo["innovacion"]
-        acum[nom_equipo]["presentacion"] += datos_equipo["presentacion"]
-        if (nom_equipo == mejor):
-            acum[nom_equipo]["mejores"] += 1
+def actualizar_acumulados(acum: dict, equipo: dict, nom_equipo) -> None:    #escribí none porque no devuelve nada, solo actualiza acumulados
+    acum[nom_equipo]["innovacion"] += equipo["innovacion"]
+    acum[nom_equipo]["presentacion"] += equipo["presentacion"]
 
-        acum[nom_equipo]["puntaje"] += datos_equipo["puntaje"]
+    acum[nom_equipo]["puntaje"] += equipo["puntaje"]
 
-        if datos_equipo["errores"]:
-            acum[nom_equipo]["errores"] += 1
-            acum[nom_equipo]["puntaje"] -= 1
+    if equipo["errores"]:
+        acum[nom_equipo]["errores"] += 1
+        acum[nom_equipo]["puntaje"] -= 1
+
+
+# Actualizar la info "mejores" de acumulados se hace aparte para hacer solo un bucle
+def marcar_mejor_equipo(acum: dict, nombre: str):
+    acum[nombre]["mejores"] += 1
+
