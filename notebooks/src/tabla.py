@@ -3,9 +3,7 @@ Las funciones de este módulo implementan la posibilidad de mostrar los resultad
 y luego los acumulados en tablas con los equipos con orden de puntaje descendente
 """
 
-def agregar_mejores_a_equipos(ronda:dict, mejor_nombre:str) ->dict:
-    for equipo in ronda:
-        if 
+
 
 
 #recibe una ronda y el mejor ya evaluado

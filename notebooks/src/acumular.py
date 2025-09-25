@@ -5,7 +5,7 @@ Las funciones de este módulo permiten inicializar y actualizar los acumulados p
 #Crea un diccionario base con los campos:
 #{"innovacion": 0, "presentacion": 0, "errores": 0, "mejores": 0, "total": 0}.
 def resetear_valores():
-    return {"innovacion": 0, "presentacion": 0, "errores": 0, "mejores": 0, "total": 0}
+    return {"innovacion": 0, "presentacion": 0, "errores": 0, "mejores": 0, "puntaje": 0}
 
 #Utilicé lambda y map únicamente para ya asegurarnos de usarlos en algun lado,
 #no es lo más eficiente, preguntar si lo hacemos así o con dict comprehension
@@ -24,14 +24,14 @@ def inicializar_acumulados(evaluaciones):
 #O sea, en una sola pasada tiene que tocar todos los campos del acumulado.
 
 def actualizar_acumulados(acum: dict, ronda: dict, mejor: str) -> dict: 
-    for equipo in ronda:
-        acum[equipo]["innovacion"] += ronda[equipo]["innovacion"]
-        acum[equipo]["presentacion"] += ronda[equipo]["presentacion"]
-        if (equipo == mejor):
-            acum[equipo]["mejores"] += 1
+    for nom_equipo, datos_equipo in ronda.items():
+        acum[nom_equipo]["innovacion"] += datos_equipo["innovacion"]
+        acum[nom_equipo]["presentacion"] += datos_equipo["presentacion"]
+        if (nom_equipo == mejor):
+            acum[nom_equipo]["mejores"] += 1
 
-        acum[equipo]["total"] += ronda[equipo]["puntaje"]
+        acum[nom_equipo]["puntaje"] += datos_equipo["puntaje"]
 
-        if ronda[equipo]["errores"]:
-            acum[equipo]["errores"] += 1
-            acum[equipo]["total"] -= 1
+        if datos_equipo["errores"]:
+            acum[nom_equipo]["errores"] += 1
+            acum[nom_equipo]["puntaje"] -= 1
