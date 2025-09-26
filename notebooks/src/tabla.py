@@ -17,11 +17,12 @@ def tabla_ronda(i, dict_ronda):
 def tabla_resultados_finales(acumulados_ordenados):
     print("\n Resultados Finales")
     print("-" * 50)
-    print(f"{'Equipo':<6} {'Innov':<6} {'Pres':<6} {'Errores':<6} {'Puntaje':<6} {'Mejores Rondas':<10}")
+    print(f"{'Equipo':<10} {'Innov':<8} {'Pres':<8} {'Errores':<8} {'Puntaje':<8} {'Mejores':<8}")
     print("-" * 50)
 
     for nombre, datos in acumulados_ordenados:
         print(f"{nombre:<10} {datos['innovacion']:<8} {datos['presentacion']:<8} {datos['errores']:<8} {datos['puntaje']:<8} {datos['mejores']:<15}")
+    print(f"El ganador fue el {acumulados_ordenados[0][0]}")
 
 def tabla_ranking_innovacion(ranking_innovacion):
     print("\n Ranking Puntos Innovacion Acumulados")

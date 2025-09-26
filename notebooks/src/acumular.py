@@ -14,11 +14,6 @@ def inicializar_acumulados(evaluaciones):
     acumulados = dict(map(lambda equipo: (equipo, resetear_valores()), equipos))    #map recorre la lista de equipos(nombres), lambda recibe el argumento del nombre del equipo,
     return acumulados                                                               #y con el diccionario reseteado por la función, crea una tupla ("Nombre Equipo",{"innovacion":0,"errores":0,...}), luego esa lista de tuplas es dict()                 
 
-#En el programa principal se puede probar así:
-#(recordar(import pprint) para imprimir lindo el diccionario)
-#acum = inicializar_acumulados(evaluaciones)
-#pprint.porint(acum)
-
 #Suma innovacion,presentacion,errores,totales.
 #Incrementa el contador de mejores equipos si corresponde
 #O sea, en una sola pasada tiene que tocar todos los campos del acumulado.
