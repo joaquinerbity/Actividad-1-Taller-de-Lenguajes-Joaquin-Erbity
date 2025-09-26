@@ -28,7 +28,6 @@ Actividad-1-Taller-de-Lenguajes-Joaquin-Erbity/
 │       └── __init__.py
 |       └── acumular.py
 |       └── evaluar.py
-|       └── recorrido.py
 |       └── tabla.py
 └── README.md
 └── requirements.txt
