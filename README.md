@@ -26,9 +26,9 @@ Actividad-1-Taller-de-Lenguajes-Joaquin-Erbity/
 │   ├── programa.ipynb
 │   └── src/
 │       └── __init__.py
-|       └── acumular.py
-|       └── evaluar.py
-|       └── tabla.py
+│       └── acumular.py
+│       └── evaluar.py
+│       └── tabla.py
 └── README.md
 └── requirements.txt
 ```
