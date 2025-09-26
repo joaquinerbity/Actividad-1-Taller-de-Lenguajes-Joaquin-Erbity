@@ -12,8 +12,8 @@ def resetear_valores():
 def inicializar_acumulados(evaluaciones):   
     equipos = evaluaciones[0].keys()
     acumulados = dict(map(lambda equipo: (equipo, resetear_valores()), equipos))    #map recorre la lista de equipos(nombres), lambda recibe el argumento del nombre del equipo,
-    return acumulados                                                               #y con el diccionario reseteado por la función, crea una tupla ("Nombre Equipo",{"innovacion":0,"errores":0,...}), luego esa lista de tuplas es dict()
-                                                                                                                                                      
+    return acumulados                                                               #y con el diccionario reseteado por la función, crea una tupla ("Nombre Equipo",{"innovacion":0,"errores":0,...}), luego esa lista de tuplas es dict()                 
+
 #En el programa principal se puede probar así:
 #(recordar(import pprint) para imprimir lindo el diccionario)
 #acum = inicializar_acumulados(evaluaciones)
@@ -38,3 +38,10 @@ def actualizar_acumulados(acum: dict, equipo: dict, nom_equipo) -> None:    #esc
 def marcar_mejor_equipo(acum: dict, nombre: str):
     acum[nombre]["mejores"] += 1
 
+# Ranking actividad 4, para puntos por innovacion
+def ranking_innovacion(acumulados):
+    return sorted(
+        acumulados.items(),
+        key=lambda item: item[1]['innovacion'],
+        reverse=True
+    )

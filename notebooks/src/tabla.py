@@ -4,8 +4,8 @@ y luego los acumulados en tablas con los equipos con orden de puntaje descendent
 """
 
 # Recibe una ronda y muestra su tabla:
-def tabla_ronda(i, ronda, dict_ronda):
-    print(f"\n🏁Ronda {i} : {ronda}")
+def tabla_ronda(i, dict_ronda):
+    print(f"\n Ronda {i} : ")
     print("-" * 50)
     print(f"{'Equipo':<10} {'Innov':<6} {'Pres':<6} {'Errores':<8} {'Puntaje':<8} {'Mejor':<6}")
     print("-" * 50)
@@ -15,11 +15,19 @@ def tabla_ronda(i, ronda, dict_ronda):
 
 
 def tabla_resultados_finales(acumulados_ordenados):
-    print("\n📊 Resultados Finales")
+    print("\n Resultados Finales")
     print("-" * 50)
-    print(f"{'Equipo':<10} {'Puntaje':<8} {'Mejores Rondas':<15}")
+    print(f"{'Equipo':<6} {'Innov':<6} {'Pres':<6} {'Errores':<6} {'Puntaje':<6} {'Mejores Rondas':<10}")
     print("-" * 50)
-    
-    for nombre, datos in acumulados_ordenados:
-        print(f"{nombre:<10} {datos['puntaje']:<8} {datos['mejores']:<15}")
 
+    for nombre, datos in acumulados_ordenados:
+        print(f"{nombre:<10} {datos['innovacion']:<8} {datos['presentacion']:<8} {datos['errores']:<8} {datos['puntaje']:<8} {datos['mejores']:<15}")
+
+def tabla_ranking_innovacion(ranking_innovacion):
+    print("\n Ranking Puntos Innovacion Acumulados")
+    print("-" * 50)
+    print(f"{'Equipo':<10} {'Puntos Innovacion':<8}")
+    print("-" * 50)
+
+    for nombre, datos in ranking_innovacion:
+        print(f"{nombre:<10} {datos['innovacion']*3:<8}")
