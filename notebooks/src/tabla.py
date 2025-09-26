@@ -3,7 +3,7 @@ Las funciones de este módulo implementan la posibilidad de mostrar los resultad
 y luego los acumulados en tablas con los equipos con orden de puntaje descendente
 """
 
-# Recibe una ronda y muestra su tabla:
+# Recibe una ronda y muestra su tabla
 def tabla_ronda(i, dict_ronda):
     print(f"\n Ronda {i} : ")
     print("-" * 50)
@@ -13,7 +13,7 @@ def tabla_ronda(i, dict_ronda):
     for nombre, datos in dict_ronda.items():
         print(f"{nombre:<10} {datos['innovacion']:<6} {datos['presentacion']:<6} {str(datos['errores']):<8} {datos['puntaje']:<8} {str(datos['mejores']):<6}")
 
-
+# Habiendo ordenado "acumulados" según su puntaje total, la informa como tabla
 def tabla_resultados_finales(acumulados_ordenados):
     print("\n Resultados Finales")
     print("-" * 50)
@@ -24,6 +24,7 @@ def tabla_resultados_finales(acumulados_ordenados):
         print(f"{nombre:<10} {datos['innovacion']:<8} {datos['presentacion']:<8} {datos['errores']:<8} {datos['puntaje']:<8} {datos['mejores']:<15}")
     print(f"El ganador fue el {acumulados_ordenados[0][0]}")
 
+# Informa el ranking de puntos de innovacion
 def tabla_ranking_innovacion(ranking_innovacion):
     print("\n Ranking Puntos Innovacion Acumulados")
     print("-" * 50)
